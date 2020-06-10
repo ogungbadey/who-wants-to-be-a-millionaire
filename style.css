@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #040c15;
+  color: #dedede;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+  padding: 15px 20px;
+}
+
+.rules p {
+  line-height: 1.2;
+  font-size: 18px;
+  letter-spacing: 1.4px;
+}
+
+.game-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+  padding: 5px 20px;
+}
+
+.output {
+  display: none;
+  text-transform: uppercase;
+  position: absolute;
+  top: 20%;
+  color: rgb(242, 248, 253);
+  font-size: 40px;
+  letter-spacing: 7px;
+  font-weight: bolder;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+
+.money-won {
+  position: absolute;
+  right: 80px;
+}
+
+.money-won li {
+  list-style: none;
+  padding: 4.5px;
+}
+
+.white {
+  color: white;
+}
+
+.other {
+  color: #e3a335;
+}
+
+.questions {
+  position: relative;
+  margin: 20px;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.question {
+  border: 1px solid;
+  padding: 20px 25px;
+  border-radius: 15rem;
+  box-shadow: inset 8px 6px 20px #062944, inset -8px -6px 20px #062944;
+}
+.answers {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 95%;
+}
+
+.answer-text {
+  cursor: pointer;
+  border-radius: 15rem;
+  padding: 10px;
+  border: 1px solid;
+  width: 47%;
+  margin: 4px 8px;
+  box-shadow: inset 8px 6px 15px #062944, inset -8px -6px 15px #062944;
+}
+
+.answer-text:hover {
+  background-color: #e3a335;
+  box-shadow: none;
+}
+
+.answer-text span {
+  padding: 0 10px;
+  pointer-events: none;
+}
+
+.active {
+  background-color: #e3a335;
+  border-radius: 18px;
+  color: white;
+  font-size: 20px;
+}
+.help {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.fifty {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.help > button {
+  cursor: pointer;
+  border-radius: 10rem;
+  width: 70px;
+  height: 50px;
+  background-color: #7c94a9;
+  border: none;
+}
+
+.help > button:active,
+button:focus {
+  outline: 0;
+}
+
+.help > button:hover {
+  background-color: #e3a335;
+}
+
+button.walk-away {
+  position: absolute;
+  left: 80px;
+  cursor: pointer;
+  border-radius: 10rem;
+  padding: 14px;
+  background-color: #7c94a9;
+  border: none;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+button.walk-away:hover {
+  background-color: #e3a335;
+}
+
+.rotate {
+  animation: rotation 4s linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(359deg);
+  }
+}
+
+.wrong {
+  background-color: red;
+  box-shadow: none;
+}
+
+.right {
+  background-color: green;
+  box-shadow: none;
+}
+
+.blinking {
+  animation: blinkingText 1.2s infinite;
+  box-shadow: none;
+}
+@keyframes blinkingText {
+  0% {
+    background-color: green;
+  }
+  49% {
+    background-color: green;
+  }
+  60% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: green;
+  }
+}
+
+.blinkingOut {
+  animation: blinkingOut 1.2s infinite;
+}
+@keyframes blinkingOut {
+  0% {
+    color: white;
+  }
+  49% {
+    color: white;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: aliceblue;
+  }
+}
+
+.blinkingWrong {
+  animation: blinkingWrong 1.2s infinite;
+}
+
+@keyframes blinkingWrong {
+  0% {
+    background-color: red;
+  }
+  49% {
+    background-color: red;
+  }
+  60% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+footer {
+  background-color: #e3a335;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  color: #040c15;
+}
+
+/* .modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #f4f4f4;
+  margin: 20% auto;
+  width: 50%;
+  padding: 20px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+.closeBtn {
+  float: right;
+  color: #ccc;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  color: black;
+} */
